@@ -51,11 +51,11 @@ of negative numbers in an array
 find the largest number in an array
 */
 
-const numbers = [-100, 1, 2, 3, 4, 55, 23, 45, 66, 77];
-// the least number
-let largest = -Infinity;
-let smallest = Infinity;
-largest = numbers[0];
+// const numbers = [-100, 1, 2, 3, 4, 55, 23, 45, 66, 77];
+// // the least number
+// let largest = -Infinity;
+// let smallest = Infinity;
+// largest = numbers[0];
 
 // for (let i = 0; i < numbers.length; i++) {
 //   console.log(largest);
@@ -79,3 +79,43 @@ find the smallest number in an array
 // }
 
 // console.log(smallest);
+
+/*
+find the second largest number in an array
+*/
+
+function searchsecondLargest(numbers) {
+  if (numbers.length < 2) {
+    return null;
+  }
+
+  let largest = -Infinity;
+  let secondLargest = Infinity;
+
+  // after solving the problem think about edge cases
+  // like what if there is no numbers in the array
+  // and what if there's less than one number in the array (etc)
+  // ask this quations to your interviewer
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > largest) {
+      secondLargest = largest;
+      largest = numbers[i];
+    } else if (numbers[i] > secondLargest && numbers[i] != largest) {
+      secondLargest = numbers[i];
+    }
+  }
+  return { secondLargest, largest };
+}
+
+const { secondLargest, largest } = searchsecondLargest([
+  4, 9, 9, 0, 2, 8, 7, 1,
+]);
+console.log(secondLargest, largest);
+
+// loop in a loop
+for (let i = 0; i < 3; i++) {
+  for (let j = i; j >= 0; j--) {
+    console.log(i, j);
+  }
+}
