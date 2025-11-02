@@ -84,19 +84,19 @@ find the smallest number in an array
 find the second largest number in an array
 */
 
-function searchsecondLargest(numbers) {
-  if (numbers.length < 2) {
-    return null;
-  }
+// function searchsecondLargest(numbers) {
+//   if (numbers.length < 2) {
+//     return null;
+//   }
 
-  let largest = -Infinity;
-  let secondLargest = Infinity;
+//   let largest = -Infinity;
+//   let secondLargest = Infinity;
 
-  // after solving the problem think about edge cases
-  // like what if there is no numbers in the array
-  // and what if there's less than one number in the array (etc)
-  // ask this quations to your interviewer
-
+// after solving the problem think about edge cases
+// like what if there is no numbers in the array
+// and what if there's less than one number in the array (etc)
+// ask this quations to your interviewer
+/*
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] > largest) {
       secondLargest = largest;
@@ -119,3 +119,50 @@ for (let i = 0; i < 3; i++) {
     console.log(i, j);
   }
 }
+*/
+/*
+let n = 5;
+
+for (let i = 0; i < n; i++) {
+  let rowStars = "";
+  for (let j = 0; j <= i; j++) {
+    rowStars = rowStars + "*";
+    // count.push(j+1)
+  }
+  console.log(rowStars);
+}
+
+// star pattern
+for (let i = 0; i < n; i++) {
+  let row = "";
+
+  // empty spaces
+  for (let j = 0; j < n - (i + 1); j++) {
+    row = row + " ";
+  }
+
+  // stars
+  for (let k = 0; k < i + 1; k++) {
+    row = row + "*";
+  }
+  console.log(row);
+}
+
+//
+let switchv = 1;
+for (let i = 0; i < n; i++) {
+  let row = "";
+
+  for (let k = 0; k < i + 1; k++) {
+    if (switchv == 0) {
+      row = row + "0";
+      switchv = 1;
+    } else {
+      row = row + "1";
+      switchv = 0;
+    }
+  }
+
+  console.log(row, `---------${switchv}`);
+}
+*/
